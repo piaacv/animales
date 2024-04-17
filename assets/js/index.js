@@ -12,7 +12,7 @@ const cardCreate = () => {
     animals.forEach((animal, i) => {
       template.innerHTML += `
             <div class="px-3 pb-2">
-            <div class="bg-dark text-white">
+            <div class="bg-dark text-white d-flex-column">
             <img height="200" src="./assets/imgs/${animal.imagen}" class="card-img-top" alt="foto animal" data-bs-toggle="modal"  
             data-bs-target="#exampleModal" onclick="modalDetails('${i}')"/>
             <div>
@@ -43,7 +43,7 @@ window.modalDetails = (i) =>{
      const animalDetails = animals[i];
         modalBody.innerHTML = `
         <div class="px-3 pb-2">
-        <div class="card w-50 m-auto bg-dark text-white border-0">
+        <div class="card w-80 mx-auto bg-dark text-white border-0">
           <img
             src="./assets/imgs/${animalDetails.imagen}"
             class="d-block m-auto w-100"
@@ -57,6 +57,7 @@ window.modalDetails = (i) =>{
         </div>
         </div>
         `
+        $("#exampleModal").modal("show")
     console.log(modalBody)
     }catch (error){
         console.log(error)
